@@ -11,6 +11,6 @@ endpoints:
       - Public
       - Organization
 dependencies:
-  connectionReferences:
-  - name: githubconnection
-  resourceRef: thirdparty:service123/v1
+    connectionReferences:
+    - name: github_connection_fissues
+      resourceRef: thirdparty:service123/v1

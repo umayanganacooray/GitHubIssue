@@ -2,7 +2,7 @@ import os
 import requests
 from datetime import datetime
 
-serviceURL = os.getenv("CHOREO_GITHUBCONNECTION_SERVICEURL")
+serviceURL = os.getenv("CHOREO_GITHUB_CONNECTION_FISSUES_SERVICEURL")
 TOKEN = os.getenv("Authorization")
 
 def convert_to_my_datetime(github_date):
