@@ -3,6 +3,7 @@ import requests
 from datetime import datetime
 
 serviceURL = os.getenv("CHOREO_GITHUBCONNECTION_SERVICEURL")
+TOKEN = os.getenv("Authorization")
 
 def convert_to_my_datetime(github_date):
     date = datetime.strptime(github_date, "%Y-%m-%dT%H:%M:%SZ")
@@ -14,6 +15,7 @@ def main():
 
     while True:
         url = f"{serviceURL}&per_page={per_page}&page={page}"
+        headers = {"Authorization": f"{TOKEN}"}
         response = requests.get(url)
 
         if response.status_code != 200:
