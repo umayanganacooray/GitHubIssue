@@ -10,7 +10,7 @@ endpoints:
     networkVisibilities: 
       - Public
       - Organization
-  dependencies:
-    connectionReferences:
-    - name: githubconnection
-      resourceRef: thirdparty:service123/v1
+dependencies:
+  connectionReferences:
+  - name: githubconnection
+  resourceRef: thirdparty:service123/v1
