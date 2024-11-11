@@ -16,7 +16,7 @@ def main():
     while True:
         url = f"{serviceURL}&per_page={per_page}&page={page}"
         headers = {"Authorization": f"{TOKEN}"}
-        response = requests.get(url)
+        response = requests.get(url,headers=headers)
 
         if response.status_code != 200:
             print("Failed to get issues:", response.status_code)
