@@ -2,8 +2,8 @@ import os
 import requests
 from datetime import datetime
 
-serviceURL = os.getenv("CHOREO_GITHUB_CONNECTION_FISSUES_SERVICEURL")
-TOKEN = os.getenv("Authorization")
+serviceURL = os.getenv("CHOREO_GITHUB_CONNECTION_FOR_ISSUES_SERVICEURL")
+GITHUB_PAT = os.getenv("CHOREO_GITHUB_CONNECTION_FOR_ISSUES_GITHUB_PAT")
 
 def convert_to_my_datetime(github_date):
     date = datetime.strptime(github_date, "%Y-%m-%dT%H:%M:%SZ")
@@ -12,10 +12,12 @@ def convert_to_my_datetime(github_date):
 def main():
     per_page = 100
     page = 1
+    
+    query = "q=repo:wso2-enterprise/choreo+is:issue"
 
     while True:
-        url = f"{serviceURL}&per_page={per_page}&page={page}"
-        headers = {"Authorization": f"{TOKEN}"}
+        url = f"{serviceURL}?{query}&per_page={per_page}&page={page}"
+        headers = {"Authorization": f"Bearer {GITHUB_PAT}"}
         response = requests.get(url,headers=headers)
 
         if response.status_code != 200:
