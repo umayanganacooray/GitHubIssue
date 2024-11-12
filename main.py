@@ -2,8 +2,8 @@ import os
 import requests
 from datetime import datetime
 
-serviceURL = os.getenv("CHOREO_EXTRACT_ISSUES_SERVICEURL")
-GITHUB_PAT = os.getenv("CHOREO_EXTRACT_ISSUES_GITHUB_PAT")
+serviceURL = os.getenv("CHOREO_GITHUB_CONNECTION_FOR_ISSUE_EXTRACT_SERVICEURL")
+GITHUB_PAT = os.getenv("CHOREO_GITHUB_CONNECTION_FOR_ISSUE_EXTRACT_GITHUB_PAT")
 
 def convert_to_my_datetime(github_date):
     date = datetime.strptime(github_date, "%Y-%m-%dT%H:%M:%SZ")

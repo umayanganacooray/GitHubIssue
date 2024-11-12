@@ -12,5 +12,5 @@ endpoints:
       - Organization
 dependencies:
     connectionReferences:
-    - name: Extract Issues
+    - name: GitHub connection for issue extract
       resourceRef: thirdparty:Choreo Github Repo/v1
